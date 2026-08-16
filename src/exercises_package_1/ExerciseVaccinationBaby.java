@@ -23,6 +23,7 @@ public class ExerciseVaccinationBaby {
 
         System.out.println("Ingrese los meses de " + nameBaby + ":");
         ageBaby = read.nextInt();
+        read.close();
 
         // Calculo de dosis de vacuna
         vaccineDose = ((weightBaby + 10) / (ageBaby * 10)) * 8;
@@ -30,8 +31,5 @@ public class ExerciseVaccinationBaby {
         // Impresión por consola
         System.out.println("---------------------------------------------------------");
         System.out.println(nameNurse + " la dosis de la vacuna es: " + vaccineDose);
-
-        // Limpiamos el buffer
-        read.close();
     }
 }

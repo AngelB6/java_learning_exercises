@@ -11,12 +11,12 @@ public class ExerciseTemperature {
 
         System.out.println("Ingrese la temperatura en Fahrenheit que quiere convertir a Celsius:");
         tempFahrenheit = read.nextFloat();
+        read.close();
 
         // Conversión de temperatura
         tempCelsius = (tempFahrenheit - 32) / 1.8;
 
         // Impresión por consola
         System.out.println("La temperatura para precalentar el horno es: " + tempCelsius);
-        read.close();
     }
 }

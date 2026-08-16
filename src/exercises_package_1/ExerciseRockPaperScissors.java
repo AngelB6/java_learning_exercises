@@ -25,30 +25,25 @@ public class ExerciseRockPaperScissors {
         String result;
 
         // Instancia de Scanner
-        Scanner read = new Scanner(System.in);
+        try (Scanner read = new Scanner(System.in)) {
 
-        System.out.println("Bienvenido!\nSeleccione una de las opción\n1. Piedra\n2. Papel\n3. Tijera");
-        opt = read.nextInt();
+            System.out.println("Bienvenido!\nSeleccione una de las opción\n1. Piedra\n2. Papel\n3. Tijera");
+            opt = read.nextInt();
 
-        if (opt != 1 && opt != 2 && opt != 3) {
-            System.out.println("Error en la selección de la maquina. Por favor vuelva a intentarlo.");
-            read.close();
-            return;
+            if (opt != 1 && opt != 2 && opt != 3) {
+                System.out.println("Error en la selección de la maquina. Por favor vuelva a intentarlo.");
+                return;
+            }
         }
 
         System.out.println("---------------------------------------------------");
-
         System.out.println(optionSelectedInfo("La maquina ha seleccionado", machine));
         System.out.println(optionSelectedInfo("Usted ha seleccionado", opt));
-
         System.out.println("---------------------------------------------------");
 
         result = (machine == opt) ? "Usted empato"
                 : ((((machine - opt) + 3) % 3) == 1) ? "Usted perdió" : "Usted ganó";
 
         System.out.println(result);
-
-        // Limpiamos el buffer
-        read.close();
     }
 }
